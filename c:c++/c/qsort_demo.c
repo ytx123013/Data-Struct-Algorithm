@@ -26,7 +26,9 @@ int main(int argc, char const *argv[])
 {
 	int unsort_number[kNumber_of_list] = {55,7,68,125,30,771,200,74,0,1};
 	print_list(unsort_number);
-	qsort(unsort_number, kNumber_of_list, sizeof(int), sort_compare);
+	int (*fp_compare)(const void*,const void *);
+	fp_compare = sort_compare;
+	qsort(unsort_number, kNumber_of_list, sizeof(int), fp_compare);
 	print_list(unsort_number);
 	return 0;
 }
