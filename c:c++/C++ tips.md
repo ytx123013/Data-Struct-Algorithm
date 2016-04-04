@@ -43,3 +43,35 @@ c1 = 9;
 * sizeof 不会计算静态成员变量
 * static 目的是将和某些类紧密相关的全局函数和变量写到类里，易于维护和理解
 * 注意复制构造函数对static成员变量的影响
+
+##关于运算符重载
+目的:扩展c++中提供的运算符的适用范围，用于类表示的抽象数据  
+#####重载算术运算符
+***
+eg.作为普通函数来说
+<pre>
+返回类型 operator操作符(参数1，参数2)
+
+Location operator+(Location &a,Location &b){
+    return Location(a.longtitude+b.longtitude,a.latitude+b.latitude);
+}
+</pre>
+作为成员函数会少一个参数
+<pre>
+class Location {
+public:
+    Location(double lon,double la){
+        longtitude = lon;
+        latitude = lai;
+    }
+    Location operator+(Location &a){
+    	return Location(a.longtitude+longtitude,a.latitude+latitude);
+    }
+    double longtitude;
+    double latitude;
+};
+</pre>  
+
+#####重载复制运算符 "="
+***
+只能重载为成员函数
