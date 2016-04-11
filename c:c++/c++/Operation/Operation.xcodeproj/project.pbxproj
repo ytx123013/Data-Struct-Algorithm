@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		262E19721CB26FB00057BD37 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 262E19711CB26FB00057BD37 /* main.cpp */; };
 		262E197A1CB270490057BD37 /* ClassDeclare.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 262E19781CB270490057BD37 /* ClassDeclare.cpp */; };
+		42EA8BB81CB60A5700D7DC52 /* MutableArray.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 42EA8BB61CB60A5700D7DC52 /* MutableArray.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -28,6 +29,8 @@
 		262E19711CB26FB00057BD37 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		262E19781CB270490057BD37 /* ClassDeclare.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ClassDeclare.cpp; sourceTree = "<group>"; };
 		262E19791CB270490057BD37 /* ClassDeclare.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ClassDeclare.hpp; sourceTree = "<group>"; };
+		42EA8BB61CB60A5700D7DC52 /* MutableArray.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MutableArray.cpp; sourceTree = "<group>"; };
+		42EA8BB71CB60A5700D7DC52 /* MutableArray.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = MutableArray.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,11 +63,21 @@
 		262E19701CB26FB00057BD37 /* Operation */ = {
 			isa = PBXGroup;
 			children = (
+				42EA8BB51CB60A2A00D7DC52 /* MutableArray */,
 				262E19711CB26FB00057BD37 /* main.cpp */,
 				262E19781CB270490057BD37 /* ClassDeclare.cpp */,
 				262E19791CB270490057BD37 /* ClassDeclare.hpp */,
 			);
 			path = Operation;
+			sourceTree = "<group>";
+		};
+		42EA8BB51CB60A2A00D7DC52 /* MutableArray */ = {
+			isa = PBXGroup;
+			children = (
+				42EA8BB61CB60A5700D7DC52 /* MutableArray.cpp */,
+				42EA8BB71CB60A5700D7DC52 /* MutableArray.hpp */,
+			);
+			name = MutableArray;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,6 +138,7 @@
 			files = (
 				262E19721CB26FB00057BD37 /* main.cpp in Sources */,
 				262E197A1CB270490057BD37 /* ClassDeclare.cpp in Sources */,
+				42EA8BB81CB60A5700D7DC52 /* MutableArray.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -245,6 +259,7 @@
 				262E19771CB26FB00057BD37 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
