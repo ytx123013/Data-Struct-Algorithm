@@ -9,9 +9,7 @@
 /* Begin PBXBuildFile section */
 		262E19721CB26FB00057BD37 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 262E19711CB26FB00057BD37 /* main.cpp */; };
 		262E197A1CB270490057BD37 /* ClassDeclare.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 262E19781CB270490057BD37 /* ClassDeclare.cpp */; };
-<<<<<<< Updated upstream
 		42EA8BB81CB60A5700D7DC52 /* MutableArray.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 42EA8BB61CB60A5700D7DC52 /* MutableArray.cpp */; };
-=======
 		268186FA1CB91C6100370A9B /* OSStreamOperation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 268186F81CB91C6100370A9B /* OSStreamOperation.cpp */; };
 		268186FD1CB9280400370A9B /* PlusPlusOperation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 268186FB1CB9280400370A9B /* PlusPlusOperation.cpp */; };
 /* End PBXBuildFile section */
