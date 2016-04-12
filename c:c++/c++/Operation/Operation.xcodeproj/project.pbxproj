@@ -9,7 +9,11 @@
 /* Begin PBXBuildFile section */
 		262E19721CB26FB00057BD37 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 262E19711CB26FB00057BD37 /* main.cpp */; };
 		262E197A1CB270490057BD37 /* ClassDeclare.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 262E19781CB270490057BD37 /* ClassDeclare.cpp */; };
+<<<<<<< Updated upstream
 		42EA8BB81CB60A5700D7DC52 /* MutableArray.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 42EA8BB61CB60A5700D7DC52 /* MutableArray.cpp */; };
+=======
+		268186FA1CB91C6100370A9B /* OSStreamOperation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 268186F81CB91C6100370A9B /* OSStreamOperation.cpp */; };
+		268186FD1CB9280400370A9B /* PlusPlusOperation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 268186FB1CB9280400370A9B /* PlusPlusOperation.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -31,6 +35,10 @@
 		262E19791CB270490057BD37 /* ClassDeclare.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ClassDeclare.hpp; sourceTree = "<group>"; };
 		42EA8BB61CB60A5700D7DC52 /* MutableArray.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MutableArray.cpp; sourceTree = "<group>"; };
 		42EA8BB71CB60A5700D7DC52 /* MutableArray.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = MutableArray.hpp; sourceTree = "<group>"; };
+		268186F81CB91C6100370A9B /* OSStreamOperation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OSStreamOperation.cpp; sourceTree = "<group>"; };
+		268186F91CB91C6100370A9B /* OSStreamOperation.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = OSStreamOperation.hpp; sourceTree = "<group>"; };
+		268186FB1CB9280400370A9B /* PlusPlusOperation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PlusPlusOperation.cpp; sourceTree = "<group>"; };
+		268186FC1CB9280400370A9B /* PlusPlusOperation.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = PlusPlusOperation.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +76,10 @@
 				262E19711CB26FB00057BD37 /* main.cpp */,
 				262E19781CB270490057BD37 /* ClassDeclare.cpp */,
 				262E19791CB270490057BD37 /* ClassDeclare.hpp */,
+				268186F81CB91C6100370A9B /* OSStreamOperation.cpp */,
+				268186F91CB91C6100370A9B /* OSStreamOperation.hpp */,
+				268186FB1CB9280400370A9B /* PlusPlusOperation.cpp */,
+				268186FC1CB9280400370A9B /* PlusPlusOperation.hpp */,
 			);
 			path = Operation;
 			sourceTree = "<group>";
@@ -147,6 +159,8 @@
 				262E19721CB26FB00057BD37 /* main.cpp in Sources */,
 				262E197A1CB270490057BD37 /* ClassDeclare.cpp in Sources */,
 				42EA8BB81CB60A5700D7DC52 /* MutableArray.cpp in Sources */,
+				268186FA1CB91C6100370A9B /* OSStreamOperation.cpp in Sources */,
+				268186FD1CB9280400370A9B /* PlusPlusOperation.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,6 +9,9 @@
 #ifndef ClassDeclare_hpp
 #define ClassDeclare_hpp
 
+#include <iostream>
+using namespace std;
+
 struct CLocation {
     double longtitude;
     double latitude;
@@ -37,9 +40,12 @@ public:
 Location operator+(Location &a,Location &b);
 
 class Complex {
-public:
+private:
     double real;
     double image;
+public:
+    Complex(){
+    }
     Complex(double r,double i){
         real = r;
         image = i;
@@ -47,7 +53,14 @@ public:
     Complex operator+(Complex &c){
         return Complex(real+c.real,image+c.image);
     }
-    
+    //声明友元函数 使其可以访问私有成员变量
+    friend void print_complex(Complex &c);
+    friend ostream & operator<<(ostream & o,Complex & c);
+    friend istream & operator>>(istream & i,Complex & c);
 };
+
+void print_complex(Complex &c);
+ostream & operator<<(ostream & o,Complex & c);
+istream & operator>>(istream & i,Complex & c);
 
 #endif /* ClassDeclare_hpp */

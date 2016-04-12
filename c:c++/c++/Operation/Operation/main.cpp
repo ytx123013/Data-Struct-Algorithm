@@ -10,12 +10,13 @@
 #include "ClassDeclare.hpp"
 //#include "MutableArray.cpp"
 #include <stdio.h>
+#include "OSStreamOperation.hpp"
+#include "PlusPlusOperation.hpp"
+
 using namespace std;
 
 void print_location(Location &location);
-void print_complex(Complex &c){
-    cout << "real : " << c.real << " image : " << c.image <<endl;
-}
+
 
 int main(int argc, const char * argv[]) {
     // insert code here...
@@ -34,7 +35,7 @@ int main(int argc, const char * argv[]) {
     struct CLocation loc;
     loc.latitude = 111;
     loc.longtitude = 222;
-    print_location(*d);
+//    print_location(*d);
     
     
     Complex x(1,2),y(3,4);
@@ -43,6 +44,24 @@ int main(int argc, const char * argv[]) {
     
     
 //  可变长整型数组
+    //++ operation
+    CDemo cdemo(4);
+    cout << (int)cdemo << endl;
+    cout << cdemo++ << " " << ++cdemo << endl;
+    
+    //osstream
+    CStudent s;
+    s.age = 5;
+    cout << s << " years old\n";
+
+    
+    Complex com;
+    int count;
+    cin >> com >> count;
+    cout << com << ", " << count;
+    
+    
+    
     
     return 0;
 }
