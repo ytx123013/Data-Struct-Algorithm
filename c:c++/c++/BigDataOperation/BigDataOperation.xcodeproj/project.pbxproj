@@ -8,7 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		42E683F61CBCB9B8006E2820 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 42E683F51CBCB9B8006E2820 /* main.cpp */; };
-		42E683FE1CBCBCA2006E2820 /* BigInteger.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 42E683FC1CBCBCA2006E2820 /* BigInteger.cpp */; };
+		42E684011CBF670D006E2820 /* BigInteger.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 42E683FF1CBF670D006E2820 /* BigInteger.cpp */; };
+		42E684041CBF68F7006E2820 /* BigIntegerTool.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 42E684021CBF68F7006E2820 /* BigIntegerTool.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -26,8 +27,10 @@
 /* Begin PBXFileReference section */
 		42E683F21CBCB9B8006E2820 /* BigDataOperation */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = BigDataOperation; sourceTree = BUILT_PRODUCTS_DIR; };
 		42E683F51CBCB9B8006E2820 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-		42E683FC1CBCBCA2006E2820 /* BigInteger.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BigInteger.cpp; sourceTree = "<group>"; };
-		42E683FD1CBCBCA2006E2820 /* BigInteger.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = BigInteger.hpp; sourceTree = "<group>"; };
+		42E683FF1CBF670D006E2820 /* BigInteger.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BigInteger.cpp; sourceTree = "<group>"; };
+		42E684001CBF670D006E2820 /* BigInteger.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = BigInteger.hpp; sourceTree = "<group>"; };
+		42E684021CBF68F7006E2820 /* BigIntegerTool.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BigIntegerTool.cpp; sourceTree = "<group>"; };
+		42E684031CBF68F7006E2820 /* BigIntegerTool.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = BigIntegerTool.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,8 +64,10 @@
 			isa = PBXGroup;
 			children = (
 				42E683F51CBCB9B8006E2820 /* main.cpp */,
-				42E683FC1CBCBCA2006E2820 /* BigInteger.cpp */,
-				42E683FD1CBCBCA2006E2820 /* BigInteger.hpp */,
+				42E683FF1CBF670D006E2820 /* BigInteger.cpp */,
+				42E684001CBF670D006E2820 /* BigInteger.hpp */,
+				42E684021CBF68F7006E2820 /* BigIntegerTool.cpp */,
+				42E684031CBF68F7006E2820 /* BigIntegerTool.hpp */,
 			);
 			path = BigDataOperation;
 			sourceTree = "<group>";
@@ -124,7 +129,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				42E683F61CBCB9B8006E2820 /* main.cpp in Sources */,
-				42E683FE1CBCBCA2006E2820 /* BigInteger.cpp in Sources */,
+				42E684011CBF670D006E2820 /* BigInteger.cpp in Sources */,
+				42E684041CBF68F7006E2820 /* BigIntegerTool.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -243,6 +249,7 @@
 				42E683FB1CBCB9B8006E2820 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

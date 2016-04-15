@@ -48,7 +48,7 @@ c1 = 9;
 
 ##关于运算符重载
 目的:扩展c++中提供的运算符的适用范围，用于类表示的抽象数据  
-#####重载运算符
+####重载运算符
 ***
 eg.作为普通函数来说
 <pre>
@@ -74,12 +74,60 @@ public:
 };
 </pre>  
 
-#####重载复制运算符 "="
+####重载复制运算符 "="
 ***
 只能重载为成员函数
 ####重载运算符为友元函数
+***
 * 成员函数不能满足使用要求  
-* 普通函数又不能访问类的私有成员  
+* 普通函数又不能访问类的私有成员   
+
+####++/--运算符的重载
+***
+* 前置运算符  
+成员函数：  
+T operator++();  
+T operator--();  
+全局函数  
+T operator++(T);  
+T operator--(T);  
+++obj,obj.operator++(),operator++(obj)都会调用上述函数
+* 后置运算符  多写一个参数，具体无意义,编译器会自动编译成0  
+成员函数  
+T operator++(int);  
+T operator--(int);  
+全局函数  
+T operator++(T,int);  
+T operator--(T,int);
+obj++,obj,operator++(0),operator++(obj,0)都会调用上述函数 
+* 强制类型转换运算符重载  
+<pre>
+class Demo{
+	int n;
+	operator int(){
+		return n;
+	}
+}
+
+Demo d;
+(int)d;   //d.int()
+</pre>
+不能写返回值类型，实际上其返回值就是强制类型转换的类型
+
+####iostream 中的运算符重载
+"<<" 左移运算符在iostream中进行了重载  
+<pre>
+osstream & osstream::operator<<(int n)/(const char *s)
+{
+	......
+	return *this;
+}
+</pre>
+
+####不能被重载的运算符  
+***
+“.",".*","::","?:",sizeof 以上运算符均不能被重载  
+运算符(),[],->,=的重载函数必须声明为类的成员函数
 
 ##关于子类
 子类对象的内存  
