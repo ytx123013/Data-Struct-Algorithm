@@ -33,17 +33,17 @@ Headquarter::Headquarter(char *name,int total_en){
     }
     
     if (!strcmp(this->headquart_name,"red")) {
-        product_sequence[0] = Type_Of_Soldier_IceMan;
-        product_sequence[1] = Type_Of_Soldier_Lion;
-        product_sequence[2] = Type_Of_Soldier_Wolf;
-        product_sequence[3] = Type_Of_Soldier_Ninja;
-        product_sequence[4] = Type_Of_Soldier_Dragon;
+        product_sequence[0] = (int)Type_Of_Soldier_IceMan;
+        product_sequence[1] = (int)Type_Of_Soldier_Lion;
+        product_sequence[2] = (int)Type_Of_Soldier_Wolf;
+        product_sequence[3] = (int)Type_Of_Soldier_Ninja;
+        product_sequence[4] = (int)Type_Of_Soldier_Dragon;
     }else{
-        product_sequence[0] = Type_Of_Soldier_Lion;
-        product_sequence[1] = Type_Of_Soldier_Dragon;
-        product_sequence[2] = Type_Of_Soldier_Ninja;
-        product_sequence[3] = Type_Of_Soldier_IceMan;
-        product_sequence[4] = Type_Of_Soldier_Wolf;
+        product_sequence[0] = (int)Type_Of_Soldier_Lion;
+        product_sequence[1] = (int)Type_Of_Soldier_Dragon;
+        product_sequence[2] = (int)Type_Of_Soldier_Ninja;
+        product_sequence[3] = (int)Type_Of_Soldier_IceMan;
+        product_sequence[4] = (int)Type_Of_Soldier_Wolf;
     }
     
     headquart_name[i] = '\0';
@@ -54,20 +54,54 @@ Headquarter::Headquarter(char *name,int total_en){
     count_of_soldier = 0;
 }
 
+void Headquarter::set_soldier_character(Soldier *soldier)
+{
+    switch (soldier->type) {
+        case Type_Of_Soldier_Dragon:
+            soldier->moral = ((double)this->total_energy/(double)inital_HP[soldier->type]);
+            break;
+        case Type_Of_Soldier_Lion:
+            soldier->loyal = this->total_energy;
+        default:
+            break;
+    }
+}
+
+//计算生产士兵后剩余的HP
+void Headquarter::product_soldier_cost_HP_of_type(Type_Of_Soldier soldier)
+{
+    this->total_energy -= Headquarter::inital_HP[soldier];
+}
+
 void Headquarter::product_soldier_of_type(Type_Of_Soldier type){
     this->count_of_each_soldier[type]++;
     this->count_of_soldier++;
-    Soldier *soldier = new Soldier(type,Headquarter::soldier_type[type],Headquarter::inital_HP[type],this->count_of_each_soldier[type]);
+    
+    //计算生产后所剩的HP
+    this->product_soldier_cost_HP_of_type(type);
+    
+    Soldier *soldier = new Soldier(type,Headquarter::soldier_type[type],Headquarter::inital_HP[type],this->count_of_each_soldier[type],this->count_of_soldier);
+    set_soldier_character(soldier);
+    
     
     print_product_info(soldier);
+    print_soldier_info(soldier);
     this->time++;
-    this->total_energy -= Headquarter::inital_HP[type];
+    
 }
 
 void Headquarter::print_product_info(Soldier *soldier){
     char *time = time_to_str(this->time);
     int soldier_type = soldier->type;
-    cout << time << " " << this->headquart_name << " " << soldier->name << " " << this->count_of_soldier << " born with strength " << Headquarter::inital_HP[soldier_type] << " , " << this->count_of_each_soldier[soldier_type] << " " << soldier->name<< " in " << this->headquart_name << " headquarter"<<endl;
+    cout << time << " " << this->headquart_name << " " << soldier->name << " " << this->count_of_soldier << " born with strength " << Headquarter::inital_HP[soldier_type] << "," << this->count_of_each_soldier[soldier_type] << " " << soldier->name<< " in " << this->headquart_name << " headquarter"<<endl;
+}
+
+void Headquarter::print_soldier_info(Soldier *soldier){
+    if (soldier->character_types[0] == Type_Of_Character_None) {
+        return;
+    }else{
+        cout << soldier->get_soldier_character_info() <<endl;
+    }
 }
 
 void Headquarter::product_next_soldier(){

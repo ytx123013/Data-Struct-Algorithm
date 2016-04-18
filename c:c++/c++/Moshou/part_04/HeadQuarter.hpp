@@ -26,6 +26,8 @@ public:
     Type_Of_Soldier next_product_type();
     void product_next_soldier();
     void product_soldier_of_type(Type_Of_Soldier type);
+    void product_soldier_cost_HP_of_type(Type_Of_Soldier soldier);
+    void set_soldier_character(Soldier *soldier);
     Headquarter(char *name,int total_en);
 private:
     char headquart_name[10];
@@ -36,6 +38,7 @@ private:
     
     int time;
     void print_product_info(Soldier *soldier);   //打印产生信息
+    void print_soldier_info(Soldier *soldier);
     int cur_product_index;
 };
 
