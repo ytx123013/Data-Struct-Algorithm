@@ -11,7 +11,7 @@
 
 #include <string>
 #include "StructDeclare.h"
-#include "Soldier.cpp"
+#include "Soldier.hpp"
 
 
 
@@ -27,8 +27,20 @@ public:
     void product_next_soldier();
     void product_soldier_of_type(Type_Of_Soldier type);
     void product_soldier_cost_HP_of_type(Type_Of_Soldier soldier);
-    void set_soldier_character(Soldier *soldier);
     Headquarter(char *name,int total_en);
+    
+    
+    int get_total_count_of_soldier(){
+        return count_of_soldier;
+    }
+    int get_total_energy(){
+        return total_energy;
+    }
+    int get_time(){
+        return time;
+    }
+    
+    friend class LogSystem;
 private:
     char headquart_name[10];
     int product_sequence[5];
@@ -37,8 +49,6 @@ private:
     int count_of_each_soldier[5] = {0,0,0,0,0};
     
     int time;
-    void print_product_info(Soldier *soldier);   //打印产生信息
-    void print_soldier_info(Soldier *soldier);
     int cur_product_index;
 };
 

@@ -7,9 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		424AE2141CC8CB8000F34851 /* SubSoldier.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 424AE2121CC8CB8000F34851 /* SubSoldier.cpp */; };
 		424E7E1F1CAA555B00CEB088 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 424E7E1E1CAA555B00CEB088 /* main.cpp */; };
 		424E7E271CAA76AC00CEB088 /* HeadQuarter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 424E7E251CAA76AC00CEB088 /* HeadQuarter.cpp */; };
 		424E7E2A1CAA76DD00CEB088 /* Soldier.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 424E7E281CAA76DD00CEB088 /* Soldier.cpp */; };
+		42A052421CD2FAD200114D6B /* LogSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 42A052401CD2FAD200114D6B /* LogSystem.cpp */; };
+		42C2A7EC1CCF087A007319CC /* SoldierFactor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 42C2A7EA1CCF087A007319CC /* SoldierFactor.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +28,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		424AE2121CC8CB8000F34851 /* SubSoldier.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SubSoldier.cpp; sourceTree = "<group>"; };
+		424AE2131CC8CB8000F34851 /* SubSoldier.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = SubSoldier.hpp; sourceTree = "<group>"; };
 		424E7E1B1CAA555B00CEB088 /* part_04 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = part_04; sourceTree = BUILT_PRODUCTS_DIR; };
 		424E7E1E1CAA555B00CEB088 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		424E7E251CAA76AC00CEB088 /* HeadQuarter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HeadQuarter.cpp; sourceTree = "<group>"; };
@@ -32,6 +37,10 @@
 		424E7E281CAA76DD00CEB088 /* Soldier.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Soldier.cpp; sourceTree = "<group>"; };
 		424E7E291CAA76DD00CEB088 /* Soldier.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Soldier.hpp; sourceTree = "<group>"; };
 		424E7E2B1CAA774000CEB088 /* StructDeclare.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StructDeclare.h; sourceTree = "<group>"; };
+		42A052401CD2FAD200114D6B /* LogSystem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LogSystem.cpp; sourceTree = "<group>"; };
+		42A052411CD2FAD200114D6B /* LogSystem.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = LogSystem.hpp; sourceTree = "<group>"; };
+		42C2A7EA1CCF087A007319CC /* SoldierFactor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SoldierFactor.cpp; sourceTree = "<group>"; };
+		42C2A7EB1CCF087A007319CC /* SoldierFactor.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = SoldierFactor.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,11 +74,17 @@
 			isa = PBXGroup;
 			children = (
 				424E7E1E1CAA555B00CEB088 /* main.cpp */,
+				424E7E2B1CAA774000CEB088 /* StructDeclare.h */,
 				424E7E251CAA76AC00CEB088 /* HeadQuarter.cpp */,
 				424E7E261CAA76AC00CEB088 /* HeadQuarter.hpp */,
 				424E7E281CAA76DD00CEB088 /* Soldier.cpp */,
 				424E7E291CAA76DD00CEB088 /* Soldier.hpp */,
-				424E7E2B1CAA774000CEB088 /* StructDeclare.h */,
+				424AE2121CC8CB8000F34851 /* SubSoldier.cpp */,
+				424AE2131CC8CB8000F34851 /* SubSoldier.hpp */,
+				42C2A7EA1CCF087A007319CC /* SoldierFactor.cpp */,
+				42C2A7EB1CCF087A007319CC /* SoldierFactor.hpp */,
+				42A052401CD2FAD200114D6B /* LogSystem.cpp */,
+				42A052411CD2FAD200114D6B /* LogSystem.hpp */,
 			);
 			path = part_04;
 			sourceTree = "<group>";
@@ -131,8 +146,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				424E7E2A1CAA76DD00CEB088 /* Soldier.cpp in Sources */,
+				42A052421CD2FAD200114D6B /* LogSystem.cpp in Sources */,
 				424E7E271CAA76AC00CEB088 /* HeadQuarter.cpp in Sources */,
 				424E7E1F1CAA555B00CEB088 /* main.cpp in Sources */,
+				424AE2141CC8CB8000F34851 /* SubSoldier.cpp in Sources */,
+				42C2A7EC1CCF087A007319CC /* SoldierFactor.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -221,6 +239,7 @@
 		424E7E231CAA555B00CEB088 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -228,6 +247,7 @@
 		424E7E241CAA555B00CEB088 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -251,6 +271,7 @@
 				424E7E241CAA555B00CEB088 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

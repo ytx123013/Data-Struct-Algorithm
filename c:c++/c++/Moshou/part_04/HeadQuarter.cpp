@@ -7,7 +7,10 @@
 //
 
 #include "HeadQuarter.hpp"
+
 #include <iostream>
+#include "LogSystem.hpp"
+#include "SoldierFactor.hpp"
 
 using namespace std;
 
@@ -54,19 +57,6 @@ Headquarter::Headquarter(char *name,int total_en){
     count_of_soldier = 0;
 }
 
-void Headquarter::set_soldier_character(Soldier *soldier)
-{
-    switch (soldier->type) {
-        case Type_Of_Soldier_Dragon:
-            soldier->moral = ((double)this->total_energy/(double)inital_HP[soldier->type]);
-            break;
-        case Type_Of_Soldier_Lion:
-            soldier->loyal = this->total_energy;
-        default:
-            break;
-    }
-}
-
 //计算生产士兵后剩余的HP
 void Headquarter::product_soldier_cost_HP_of_type(Type_Of_Soldier soldier)
 {
@@ -80,29 +70,16 @@ void Headquarter::product_soldier_of_type(Type_Of_Soldier type){
     //计算生产后所剩的HP
     this->product_soldier_cost_HP_of_type(type);
     
-    Soldier *soldier = new Soldier(type,Headquarter::soldier_type[type],Headquarter::inital_HP[type],this->count_of_each_soldier[type],this->count_of_soldier);
-    set_soldier_character(soldier);
+
+    Soldier *soldier = SoldierFactor::shared_factor().product_soldier_of_type(*this, type);
     
-    
-    print_product_info(soldier);
-    print_soldier_info(soldier);
+    LogSystem::print_product_soldier_info(*this, *soldier);
+    LogSystem::print_soldier_character(*soldier);
+
     this->time++;
     
 }
 
-void Headquarter::print_product_info(Soldier *soldier){
-    char *time = time_to_str(this->time);
-    int soldier_type = soldier->type;
-    cout << time << " " << this->headquart_name << " " << soldier->name << " " << this->count_of_soldier << " born with strength " << Headquarter::inital_HP[soldier_type] << "," << this->count_of_each_soldier[soldier_type] << " " << soldier->name<< " in " << this->headquart_name << " headquarter"<<endl;
-}
-
-void Headquarter::print_soldier_info(Soldier *soldier){
-    if (soldier->character_types[0] == Type_Of_Character_None) {
-        return;
-    }else{
-        cout << soldier->get_soldier_character_info() <<endl;
-    }
-}
 
 void Headquarter::product_next_soldier(){
     if (stop_product == 1) {
