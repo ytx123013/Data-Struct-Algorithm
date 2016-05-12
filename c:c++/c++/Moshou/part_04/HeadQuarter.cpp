@@ -28,14 +28,8 @@ static char* time_to_str(int time1){
     return time;
 }
 
-Headquarter::Headquarter(char *name,int total_en){
-    int i = 0;
-    while (*(name + i)!= '\0') {
-        headquart_name[i] = *(name + i);
-        i++;
-    }
-    
-    if (!strcmp(this->headquart_name,"red")) {
+Headquarter::Headquarter(string name,int total_en){
+    if (name == "red"){
         product_sequence[0] = (int)Type_Of_Soldier_IceMan;
         product_sequence[1] = (int)Type_Of_Soldier_Lion;
         product_sequence[2] = (int)Type_Of_Soldier_Wolf;
@@ -49,7 +43,7 @@ Headquarter::Headquarter(char *name,int total_en){
         product_sequence[4] = (int)Type_Of_Soldier_Wolf;
     }
     
-    headquart_name[i] = '\0';
+    headquart_name = name;
     total_energy = total_en;
     time = 0;
     cur_product_index = -1;
@@ -79,7 +73,6 @@ void Headquarter::product_soldier_of_type(Type_Of_Soldier type){
     this->time++;
     
 }
-
 
 void Headquarter::product_next_soldier(){
     if (stop_product == 1) {

@@ -12,27 +12,24 @@
 #include <string>
 #include "StructDeclare.h"
 #include "Soldier.hpp"
+#include "Weapon.hpp"
 using namespace std;
 class IceMan : public Soldier {
 public:
     Type_Of_Weapon weapon_type;
-    
-    IceMan(Type_Of_Weapon weapon_type) : Soldier(Type_Of_Soldier_IceMan){
-        this->count_of_character = 1;
-        this->character_types = new Type_Of_Character[this->count_of_character];
-        this->character_types[0] = Type_Of_Character_One_Weapon;
-        this->weapon_type = weapon_type;
+    Weapon  *weapon;
+    IceMan(Weapon *weapon,int number) : Soldier(Type_Of_Soldier_IceMan,number){
+        this -> weapon = weapon;
+        this -> count_of_weapon = 1;
     }
+
     string &get_soldier_character_info();
 };
 
 class Lion : public Soldier {
 public:
     int loyal;
-    Lion(int loyal) : Soldier(Type_Of_Soldier_Lion){
-        this->count_of_character = 1;
-        this->character_types = new Type_Of_Character[this->count_of_character];
-        this->character_types[0] = Type_Of_Character_Loyal;
+    Lion(int loyal,int number) : Soldier(Type_Of_Soldier_Lion,number){
         this->loyal = loyal;
     }
     string &get_soldier_character_info();
@@ -40,11 +37,9 @@ public:
 
 class Wolf : public Soldier {
 public:
-    Wolf() : Soldier(Type_Of_Soldier_Wolf){
-        this->count_of_character = 1;
-        this->character_types = new Type_Of_Character[this->count_of_character];
-        this->character_types[0] = Type_Of_Character_None;
+    Wolf(int number) : Soldier(Type_Of_Soldier_Wolf,number){
     }
+    Weapon *weapon;
     string &get_soldier_character_info();
 };
 
@@ -52,13 +47,14 @@ class Ninja : public Soldier {
 public:
     Type_Of_Weapon weapon_type1;
     Type_Of_Weapon weapon_type2;
-    Ninja(Type_Of_Weapon weapon1,Type_Of_Weapon weapon2) : Soldier(Type_Of_Soldier_Ninja){
-        this->count_of_character = 1;
-        this->character_types = new Type_Of_Character[this->count_of_character];
-        this->character_types[0] = Type_Of_Character_Two_Weapon;
-        this->weapon_type1 = weapon1;
-        this->weapon_type2 = weapon2;
-    }
+    Weapon *weapon1;
+    Weapon *weapon2;
+    Ninja(Weapon *weapon1,Weapon *weapon2,int number) : Soldier(Type_Of_Soldier_Ninja,number){
+        this->weapon1 = weapon1;
+        this->weapon2 = weapon2;
+        this->count_of_weapon = 2;
+    };
+
     string &get_soldier_character_info();
 };
 
@@ -66,15 +62,14 @@ class Dragon : public Soldier {
 public:
     Type_Of_Weapon weapon_type;
     float moral;
-    
-    Dragon(Type_Of_Weapon weapon1,float moral) : Soldier(Type_Of_Soldier_Dragon){
-        this->count_of_character = 2;
-        this->character_types = new Type_Of_Character[this->count_of_character];
-        this->character_types[0] = Type_Of_Character_One_Weapon;
-        this->character_types[1] = Type_Of_Character_Moral;
-        
-        this->weapon_type = weapon1;
+    Weapon *weapon;
+    Dragon(Weapon *weapon,float moral,int number):Soldier(Type_Of_Soldier_Dragon,number){
         this->moral = moral;
+        this->weapon = weapon;
+        this->count_of_weapon = 1;
+    }
+    void cheer(){
+    
     }
     string &get_soldier_character_info();
 };

@@ -11,25 +11,25 @@
 
 #include "StructDeclare.h"
 #include <string>
+#include "CommonData.hpp"
 using namespace::std;
 
 class Soldier {
 public:
 
-    int HP;
-    int number;         //每种士兵种类编号
-    int total_number;   //在所有士兵中的编号
+    int HP;                 //生命值
+    int number;             //每种士兵种类编号
+    int total_number;       //在所有士兵中的编号
+    int attacks;            //攻击力
+    int count_of_weapon;    //士兵拥有的武器数量
     Type_Of_Soldier type;
     string name;
-
-    //士兵类型数量
-    int count_of_character;
     
-    Type_Of_Character *character_types;
-
-    
-    Soldier(Type_Of_Soldier soldier_type){
+    Soldier(Type_Of_Soldier soldier_type, int number){
+        this->number = number;
+        this->count_of_weapon = 0;
         this->name = soldier_type_name[soldier_type];
+        this->attacks = CommonData::soldier_attack[soldier_type];
         this->type = soldier_type;
     }
     

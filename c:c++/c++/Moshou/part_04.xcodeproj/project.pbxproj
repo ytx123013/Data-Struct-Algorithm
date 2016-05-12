@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		421CD2C81CE41ED80076F505 /* CityManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 421CD2C61CE41ED80076F505 /* CityManager.cpp */; };
+		421CD2CB1CE41EF70076F505 /* City.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 421CD2C91CE41EF70076F505 /* City.cpp */; };
+		421CD2CE1CE424650076F505 /* FightController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 421CD2CC1CE424650076F505 /* FightController.cpp */; };
+		421CD2D11CE42C120076F505 /* Weapon.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 421CD2CF1CE42C120076F505 /* Weapon.cpp */; };
+		421CD2D41CE430120076F505 /* CommonData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 421CD2D21CE430120076F505 /* CommonData.cpp */; };
+		421CD2D71CE4344C0076F505 /* WeaponFactor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 421CD2D51CE4344C0076F505 /* WeaponFactor.cpp */; };
 		424AE2141CC8CB8000F34851 /* SubSoldier.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 424AE2121CC8CB8000F34851 /* SubSoldier.cpp */; };
 		424E7E1F1CAA555B00CEB088 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 424E7E1E1CAA555B00CEB088 /* main.cpp */; };
 		424E7E271CAA76AC00CEB088 /* HeadQuarter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 424E7E251CAA76AC00CEB088 /* HeadQuarter.cpp */; };
@@ -28,6 +34,18 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		421CD2C61CE41ED80076F505 /* CityManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CityManager.cpp; sourceTree = "<group>"; };
+		421CD2C71CE41ED80076F505 /* CityManager.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CityManager.hpp; sourceTree = "<group>"; };
+		421CD2C91CE41EF70076F505 /* City.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = City.cpp; sourceTree = "<group>"; };
+		421CD2CA1CE41EF70076F505 /* City.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = City.hpp; sourceTree = "<group>"; };
+		421CD2CC1CE424650076F505 /* FightController.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FightController.cpp; sourceTree = "<group>"; };
+		421CD2CD1CE424650076F505 /* FightController.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = FightController.hpp; sourceTree = "<group>"; };
+		421CD2CF1CE42C120076F505 /* Weapon.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Weapon.cpp; sourceTree = "<group>"; };
+		421CD2D01CE42C120076F505 /* Weapon.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Weapon.hpp; sourceTree = "<group>"; };
+		421CD2D21CE430120076F505 /* CommonData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CommonData.cpp; sourceTree = "<group>"; };
+		421CD2D31CE430120076F505 /* CommonData.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CommonData.hpp; sourceTree = "<group>"; };
+		421CD2D51CE4344C0076F505 /* WeaponFactor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = WeaponFactor.cpp; sourceTree = "<group>"; };
+		421CD2D61CE4344C0076F505 /* WeaponFactor.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = WeaponFactor.hpp; sourceTree = "<group>"; };
 		424AE2121CC8CB8000F34851 /* SubSoldier.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SubSoldier.cpp; sourceTree = "<group>"; };
 		424AE2131CC8CB8000F34851 /* SubSoldier.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = SubSoldier.hpp; sourceTree = "<group>"; };
 		424E7E1B1CAA555B00CEB088 /* part_04 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = part_04; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -83,8 +101,20 @@
 				424AE2131CC8CB8000F34851 /* SubSoldier.hpp */,
 				42C2A7EA1CCF087A007319CC /* SoldierFactor.cpp */,
 				42C2A7EB1CCF087A007319CC /* SoldierFactor.hpp */,
+				421CD2D51CE4344C0076F505 /* WeaponFactor.cpp */,
+				421CD2D61CE4344C0076F505 /* WeaponFactor.hpp */,
+				421CD2CF1CE42C120076F505 /* Weapon.cpp */,
+				421CD2D01CE42C120076F505 /* Weapon.hpp */,
 				42A052401CD2FAD200114D6B /* LogSystem.cpp */,
 				42A052411CD2FAD200114D6B /* LogSystem.hpp */,
+				421CD2C61CE41ED80076F505 /* CityManager.cpp */,
+				421CD2C71CE41ED80076F505 /* CityManager.hpp */,
+				421CD2C91CE41EF70076F505 /* City.cpp */,
+				421CD2CA1CE41EF70076F505 /* City.hpp */,
+				421CD2CC1CE424650076F505 /* FightController.cpp */,
+				421CD2CD1CE424650076F505 /* FightController.hpp */,
+				421CD2D21CE430120076F505 /* CommonData.cpp */,
+				421CD2D31CE430120076F505 /* CommonData.hpp */,
 			);
 			path = part_04;
 			sourceTree = "<group>";
@@ -146,10 +176,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				424E7E2A1CAA76DD00CEB088 /* Soldier.cpp in Sources */,
+				421CD2C81CE41ED80076F505 /* CityManager.cpp in Sources */,
+				421CD2CB1CE41EF70076F505 /* City.cpp in Sources */,
 				42A052421CD2FAD200114D6B /* LogSystem.cpp in Sources */,
 				424E7E271CAA76AC00CEB088 /* HeadQuarter.cpp in Sources */,
+				421CD2CE1CE424650076F505 /* FightController.cpp in Sources */,
+				421CD2D71CE4344C0076F505 /* WeaponFactor.cpp in Sources */,
 				424E7E1F1CAA555B00CEB088 /* main.cpp in Sources */,
+				421CD2D11CE42C120076F505 /* Weapon.cpp in Sources */,
 				424AE2141CC8CB8000F34851 /* SubSoldier.cpp in Sources */,
+				421CD2D41CE430120076F505 /* CommonData.cpp in Sources */,
 				42C2A7EC1CCF087A007319CC /* SoldierFactor.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

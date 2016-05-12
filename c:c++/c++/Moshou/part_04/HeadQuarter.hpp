@@ -27,7 +27,7 @@ public:
     void product_next_soldier();
     void product_soldier_of_type(Type_Of_Soldier type);
     void product_soldier_cost_HP_of_type(Type_Of_Soldier soldier);
-    Headquarter(char *name,int total_en);
+    Headquarter(string name,int total_en);
     
     
     int get_total_count_of_soldier(){
@@ -41,8 +41,10 @@ public:
     }
     
     friend class LogSystem;
+    friend class SoldierFactor;
 private:
-    char headquart_name[10];
+//    char headquart_name[10];
+    string headquart_name;
     int product_sequence[5];
     int total_energy;
     int count_of_soldier;    
