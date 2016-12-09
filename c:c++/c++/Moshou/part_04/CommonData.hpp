@@ -9,7 +9,8 @@
 #ifndef CommonData_hpp
 #define CommonData_hpp
 
-#include <stdio.h>
+#include <string>
+using namespace std;
 
 class CommonData {
 public:
@@ -20,6 +21,13 @@ public:
     static int stop_minutes;
     static int soldier_inital_hp[5];
     static int soldier_attack[5];
+    static int event_index;
+    
+    static int hour;
+    static int min[10];
+    static string get_event_time();
+    
+    static void next_event();
 };
 
 #endif /* CommonData_hpp */

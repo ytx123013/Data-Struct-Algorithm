@@ -18,16 +18,19 @@
 class Headquarter {
     
 public:
+    Headquarter(string name,int total_en);
     static int inital_HP[5];
     static char soldier_type[5][10];
     int stop_product;
-    int has_enough_energy();
     int has_enough_energy_of_soldier_type(Type_Of_Soldier type);
     Type_Of_Soldier next_product_type();
-    void product_next_soldier();
+    Type_Of_Soldier product_soldier_type;
+    void product_soldier();
     void product_soldier_of_type(Type_Of_Soldier type);
     void product_soldier_cost_HP_of_type(Type_Of_Soldier soldier);
-    Headquarter(string name,int total_en);
+    
+    
+    
     
     
     int get_total_count_of_soldier(){

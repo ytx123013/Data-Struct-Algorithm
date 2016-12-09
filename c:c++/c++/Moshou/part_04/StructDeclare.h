@@ -21,6 +21,12 @@ typedef enum{
 } Type_Of_Soldier;
 
 typedef enum{
+    Type_Of_City_Owner_Red = 0,
+    Type_Of_City_Owner_Blue,
+    Type_Of_City_Owner_None
+}Type_Of_City_Owner;
+
+typedef enum{
     Type_Of_Weapon_Sword = 0,
     Type_Of_Weapon_Bomb,
     Type_Of_Weapon_Arrow,

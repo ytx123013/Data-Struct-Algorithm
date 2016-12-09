@@ -9,20 +9,22 @@
 #ifndef City_hpp
 #define City_hpp
 
-#include <stdio.h>
+#include "StructDeclare.h"
 
 class City {
 public:
     int      num;           //编号
     int      energy;        //城市所含生命元
+    Type_Of_City_Owner   owner_type;
     static int total_count;
     
     City(){
         num = ++total_count;
+        owner_type = Type_Of_City_Owner_None;
     }
     
     void energy_increase(){
-        
+        energy += 10;
     }
 };
 

@@ -43,12 +43,12 @@ Type_Of_Weapon get_IceMan_weapon_type(int total_soldier_count){
     return get_weapon_type(total_soldier_count);
 }
 
-float get_dragon_moral(int headquarter_HP,int dragon_need_HP){
+double get_dragon_moral(int headquarter_HP,int dragon_need_HP){
     return ((double)headquarter_HP/(double)dragon_need_HP);
 }
 
-float get_dragon_moral(int headquarter_HP){
-    return ((float)headquarter_HP/(float)CommonData::soldier_inital_hp[Type_Of_Soldier_Dragon]);
+double get_dragon_moral(int headquarter_HP){
+    return ((double)headquarter_HP/(double)CommonData::soldier_inital_hp[Type_Of_Soldier_Dragon]);
 }
 
 int get_Lion_loyal(int total_energy){
@@ -65,7 +65,7 @@ Soldier * SoldierFactor::product_soldier_of_type(Headquarter &quarter, Type_Of_S
     if (soldier_type == Type_Of_Soldier_Dragon) {
         
         Weapon *weapon = WeaponFactor::product_weapon_of_type(get_dragon_weapon_type(total_soldier), Type_Of_Soldier_Dragon);
-        float moral = get_dragon_moral(total_energy);
+        double moral = get_dragon_moral(total_energy);
         product_soldier = new Dragon(weapon,moral,quarter.count_of_each_soldier[Type_Of_Soldier_Dragon]);
         
     }else if (soldier_type == Type_Of_Soldier_Ninja){

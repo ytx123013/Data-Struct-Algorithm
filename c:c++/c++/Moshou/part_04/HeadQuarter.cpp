@@ -46,7 +46,8 @@ Headquarter::Headquarter(string name,int total_en){
     headquart_name = name;
     total_energy = total_en;
     time = 0;
-    cur_product_index = -1;
+    cur_product_index = 0;
+    product_soldier_type = (Type_Of_Soldier)this->product_sequence[cur_product_index];
     stop_product = 0;
     count_of_soldier = 0;
 }
@@ -74,20 +75,17 @@ void Headquarter::product_soldier_of_type(Type_Of_Soldier type){
     
 }
 
-void Headquarter::product_next_soldier(){
-    if (stop_product == 1) {
-        return;
-    }
-    Type_Of_Soldier nextType = next_product_type();
-    if (has_enough_energy_of_soldier_type(nextType)) {
-        product_soldier_of_type(nextType);
+void Headquarter::product_soldier(){
+//    if (stop_product == 1) {
+//        return;
+//    }
+//    Type_Of_Soldier nextType = next_product_type();
+    //product_soldier_type = next_product_type();
+    if (has_enough_energy_of_soldier_type(product_soldier_type)) {
+        product_soldier_of_type(product_soldier_type);
+        product_soldier_type = next_product_type();
     }else{
-        if (has_enough_energy()) {
-            product_next_soldier();
-        }else{
-            stop_product = 1;
-            cout<< time_to_str(this->time) << " " << this->headquart_name << " headquarter stops making warriors" << endl;
-        }
+        
     }
 }
 
@@ -102,19 +100,6 @@ Type_Of_Soldier Headquarter::next_product_type(){
 
 int Headquarter::has_enough_energy_of_soldier_type(Type_Of_Soldier type){
     if (this->total_energy < Headquarter::inital_HP[type]) {
-        return 0;
-    }
-    return 1;
-}
-
-int Headquarter::has_enough_energy(){
-    int min = 10000;
-    for (int i = 0; i < 5; i++) {
-        if (min > Headquarter::inital_HP[i]){
-            min = Headquarter::inital_HP[i];
-        }
-    }
-    if (this->total_energy < min) {
         return 0;
     }
     return 1;

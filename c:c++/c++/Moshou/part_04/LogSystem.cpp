@@ -7,6 +7,7 @@
 //
 
 #include "LogSystem.hpp"
+#include "CommonData.hpp"
 #include <iostream>
 
 using namespace std;
@@ -26,10 +27,10 @@ void LogSystem::print_soldier_character(Soldier &soldier)
 {
     switch (soldier.type) {
         case Type_Of_Soldier_Wolf:
-            break;
-        case Type_Of_Soldier_Dragon:
         case Type_Of_Soldier_Ninja:
         case Type_Of_Soldier_IceMan:
+            break;
+        case Type_Of_Soldier_Dragon:
         case Type_Of_Soldier_Lion:
             cout << soldier.get_soldier_character_info() << endl;
             break;
@@ -40,7 +41,8 @@ void LogSystem::print_soldier_character(Soldier &soldier)
 
 void LogSystem::print_product_soldier_info(Headquarter &headquarter, Soldier &soldier)
 {
-    char *time = time_to_str(headquarter.get_time());
+/*    char *time = time_to_str(headquarter.get_time());
     int soldier_type = soldier.type;
-    cout << time << " " << headquarter.headquart_name << " " << soldier.name << " " << headquarter.count_of_soldier << " born with strength " << Headquarter::inital_HP[soldier_type] << "," << headquarter.count_of_each_soldier[soldier_type] << " " << soldier.name<< " in " << headquarter.headquart_name << " headquarter"<<endl;
+    cout << time << " " << headquarter.headquart_name << " " << soldier.name << " " << headquarter.count_of_soldier << " born with strength " << Headquarter::inital_HP[soldier_type] << "," << headquarter.count_of_each_soldier[soldier_type] << " " << soldier.name<< " in " << headquarter.headquart_name << " headquarter"<<endl;*/
+    cout << CommonData::get_event_time() << " " << headquarter.headquart_name << " " << soldier.name << " " << headquarter.count_of_each_soldier[soldier.type] << " born" << endl;
 }

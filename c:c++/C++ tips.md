@@ -18,29 +18,32 @@ main(){
 ##关于构造函数/析构函数
 ####构造函数
 * 当函数传递的参数是一个类的对象的时候，函数会调用复制构造函数创建一个临时对象，效率较低，
+
+* 当一个类创建时，若成员变量是一个类，则会先调用成员变量类的构造函数再调用本类的构造函数。
+
 * 关于类型转换构造函数，如下代码
-<pre>
-class Complex
-{
-public:
-	double real, imag;
-	Complex(int i){		//类型转换构造函数
-		real = i;
-	};
-	Complex(double r,double i){
-		real = r;
-		imag = i;
-	}
-	~Complex();
-};
-Complex c1(7,12);
-Complex c2 = 2;
-c1 = 9;
-</pre>
-c2 = 2;  
-是直接调用的构造函数  
-c1 = 9;  
-9会被自动转换成一个临时的Complex对象
+  <pre>
+  class Complex
+  {
+  public:
+  double real, imag;
+  Complex(int i){		//类型转换构造函数
+  	real = i;
+  };
+  Complex(double r,double i){
+  	real = r;
+  	imag = i;
+  }
+  ~Complex();
+  };
+  Complex c1(7,12);
+  Complex c2 = 2;
+  c1 = 9;
+  </pre>
+  c2 = 2;  
+  是直接调用的构造函数  
+  c1 = 9;  
+  9会被自动转换成一个临时的Complex对象
 
 ####析构函数
 * 对象消亡时自动调用的函数，注意在这里调用 delete 去释放 new 出来的空间
@@ -95,29 +98,29 @@ public:
 ####++/--运算符的重载
 ***
 * 前置运算符  
-成员函数：  
-T operator++();  
-T operator--();  
-全局函数  
-T operator++(T);  
-T operator--(T);  
-++obj,obj.operator++(),operator++(obj)都会调用上述函数
+  成员函数：  
+  T operator++();  
+  T operator--();  
+  全局函数  
+  T operator++(T);  
+  T operator--(T);  
+  ++obj,obj.operator++(),operator++(obj)都会调用上述函数
 * 后置运算符  多写一个参数，具体无意义,编译器会自动编译成0  
-成员函数  
-T operator++(int);  
-T operator--(int);  
-全局函数  
-T operator++(T,int);  
-T operator--(T,int);
-obj++,obj,operator++(0),operator++(obj,0)都会调用上述函数 
+  成员函数  
+  T operator++(int);  
+  T operator--(int);  
+  全局函数  
+  T operator++(T,int);  
+  T operator--(T,int);
+  obj++,obj,operator++(0),operator++(obj,0)都会调用上述函数 
 * 强制类型转换运算符重载  
-<pre>
-class Demo{
-	int n;
-	operator int(){
-		return n;
-	}
-}
+  <pre>
+  class Demo{
+  int n;
+  operator int(){
+  	return n;
+  }
+  }
 
 Demo d;
 (int)d;   //d.int()
@@ -143,7 +146,7 @@ osstream & osstream::operator<<(int n)/(const char *s)
 子类对象的内存  
 ***
 子类对象的体积等于父类对象体积再加上子类对象自己的成员变量体积。在子类对象中，包含着父类对象，且父类对象的位置位于子类对象新增成员变量之前。  
-![Art Text](./c++.png)  
+![image](./img/subclass.png)  
 #####子类的构造函数  
 ***
 执行子类构造函数之前，会先执行父类的构造函数  
@@ -179,4 +182,38 @@ osstream & osstream::operator<<(int n)/(const char *s)
 关于父类和子类的成员变量  
 在父类中，有virtual修饰的虚成员变量，在子类中有与其同名同类型的成员变量。此种情况下，子类变量会覆盖父类变量。  
 在父类中，存在有与子类同名同类型的成员变量，但没有virtual修饰。
-此时不会覆盖，但是会重写。即子类中访问成员变量时，访问的是子类的，父类的会被隐藏。但是通过父类名直接调用仍可以使用父类该变量。不属于覆盖，被称为重写。
+此时不会覆盖，但是会重写。即子类中访问成员变量时，访问的是子类的，父类的会被隐藏。但是通过父类名直接调用仍可以使用父类该变量。不属于覆盖，被称为重写。  
+##文件操作
+c++标准库中 ifstream,ofstream,fstream 共3个类用于文件操作  
+使用/创建文件基本过程
+***
+1. 打开文件(通过指定文件名，建立文件和文件流对象的关联，并指明使用方式   
+   ios::out 输出到文件，删除原有内容  
+   ios::app 输出到文件，保留原有内容，在文件末尾添加
+   ios::binary 以二进制文件格式打开文件 )
+2. 读/写文件(利用读/写指针进行相应位置的操作)
+3. 关闭文件  
+
+##模版
+使用类模版生命对象  
+
+* 类模版由类模版生成类的过程叫做类模版的实例化
+* 由类模版实例化的到的类叫做模版类  
+* 同一个类模版生成的两个模版类是不兼容的(即两个毫无关系的新类)
+
+***
+在类模板中使用非类型参数  
+非类型参数可以用来说明类模板中的属性
+类型参数可以用来说明类模板中的属性类型，成员操作的参数类型和返回值类型
+<pre>
+template <class T,int size>
+class CArray{
+	T array[size];
+}
+</pre>
+需要注意的是 非类型参数不一样也是不同的两个模版类
+如<pre>
+CArray(int,40) a1;
+CArray(int,50) a2;
+</pre>
+

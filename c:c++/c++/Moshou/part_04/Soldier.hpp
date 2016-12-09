@@ -23,6 +23,7 @@ public:
     int attacks;            //攻击力
     int count_of_weapon;    //士兵拥有的武器数量
     Type_Of_Soldier type;
+    int city_index;
     string name;
     
     Soldier(Type_Of_Soldier soldier_type, int number){
@@ -33,6 +34,9 @@ public:
         this->type = soldier_type;
     }
     
+    virtual void soldier_move(){
+        city_index++;
+    }
     virtual string &get_soldier_character_info() = 0;
 
 };
