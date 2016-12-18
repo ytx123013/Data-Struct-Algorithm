@@ -7,15 +7,3 @@
 //
 
 #include "BinaryTreeNode.hpp"
-
-template <class T>
-BinaryTreeNode<T>::BinaryTreeNode(T ele){
-    info = ele;
-}
-
-template <class T>
-BinaryTreeNode<T>::BinaryTreeNode(T &ele,BinaryTreeNode<T> &left,BinaryTreeNode<T> &right) {
-    info = ele;
-    leftNode = &left;
-    rightNode = &right;
-}

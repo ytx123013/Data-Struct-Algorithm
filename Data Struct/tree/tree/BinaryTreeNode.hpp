@@ -8,6 +8,7 @@
 
 #ifndef BinaryTreeNode_hpp
 #define BinaryTreeNode_hpp
+#include <iostream>
 
 template <class T>
 class BinaryTreeNode {
@@ -19,8 +20,14 @@ private:
 public:
     //构造函数
     BinaryTreeNode(){};
-    BinaryTreeNode(T ele);     //给数据的构造函数
-    BinaryTreeNode(T &ele,BinaryTreeNode<T> &left,BinaryTreeNode<T> &right);                        //给定数据和左右子树
+    BinaryTreeNode(T ele){     //给数据的构造函数
+        info = ele;
+    }
+    BinaryTreeNode(T &ele,BinaryTreeNode<T> &left,BinaryTreeNode<T> &right){                        //给定数据和左右子树
+        info = ele;
+        leftNode = &left;
+        rightNode = &right;
+    }
     
     //左右子树及数据的设置
     BinaryTreeNode<T> * getLeftChild(){
@@ -31,7 +38,7 @@ public:
         return rightNode;
     };
     
-    T getNodeValue(){
+    T & getNodeValue(){
         return info;
     };
     void setLeftChild(BinaryTreeNode<T> &left){
@@ -52,6 +59,11 @@ public:
             return false;
         }
     };
+    
+    //打印
+    void printNode(){
+        std::cout << getNodeValue();
+    }
 };
 
 #endif /* BinaryTreeNode_hpp */

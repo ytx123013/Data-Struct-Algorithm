@@ -11,6 +11,8 @@
 
 #include "BinaryTreeNode.hpp"
 #include <iostream>
+#include <stack>
+#include <queue>
 using namespace std;
 
 template <class T>
@@ -24,8 +26,8 @@ public:
     ~BinaryTree(){};
     
     //树的根节点
-    void setRootNode(BinaryTreeNode<T> &rootNode){
-        root = &rootNode;
+    void setRootNode(BinaryTreeNode<T> *rootNode){
+        root = rootNode;
     };
     BinaryTreeNode<T> &getRootNode(){
         return *root;
@@ -42,17 +44,62 @@ public:
     }
     
     //深搜遍历  中序遍历
+    
     void recursionSearch(){             //递归搜索
-        preorderRecursion(root);
+        cout << "recursion search : " ;
+        inorderRecursion(root);
+        cout << endl;
     }
-    void preorderRecursion(BinaryTreeNode<T> *node){
+    void inorderRecursion(BinaryTreeNode<T> *node){
         if (node != nullptr) {
-            preorderRecursion(node->getLeftChild());
-            cout << node->getNodeValue() << endl;
-            preorderRecursion(node->getRightChild());
+            inorderRecursion(node->getLeftChild());
+            node->printNode();
+            inorderRecursion(node->getRightChild());
         }
-        
-
+    }
+    
+    void stackSearch(){                 //辅助栈
+        cout << "stack search : " ;
+        inorderStackSearch(root);
+        cout << endl;
+    }
+    void inorderStackSearch(BinaryTreeNode<T> *node){
+        static stack<BinaryTreeNode<T> *> aStack;
+        BinaryTreeNode<T> *pointer = node;
+        while (!aStack.empty() || pointer) {
+            if (pointer) {
+                aStack.push(pointer);
+                pointer = pointer->getLeftChild();
+            }else{
+                pointer = aStack.top();
+                pointer->printNode();
+                aStack.pop();
+                pointer = pointer->getRightChild();
+            }
+        }
+    }
+    
+    //宽度遍历
+    void levelOrderSearch(){
+        cout << "Level order search: ";
+        queue<BinaryTreeNode<T> *> aQueue;
+        BinaryTreeNode<T> *pointer = root;
+        while (1) {
+            pointer->printNode();
+            if (pointer->getLeftChild()) {
+                aQueue.push(pointer->getLeftChild());
+            }
+            if (pointer->getRightChild()) {
+                aQueue.push(pointer->getRightChild());
+            }
+            if (!aQueue.empty()) {
+                pointer = aQueue.front();
+                aQueue.pop();
+            }else{
+                break;
+            }
+        }
+        cout << endl;
     }
 };
 

@@ -9,12 +9,29 @@
 #include <iostream>
 #include "BinaryTree.hpp"
 #include <string>
-
+#include <cstdio>
+#include <cstring>
+#include <cmath>
 
 using namespace std;
 
 void initTree(BinaryTree<string> &tree)
 {
+    /*
+     *       +
+     *      / \
+     *     *   3
+     *    / \
+     *   1   -
+     *      / \
+     *     5   4
+     *
+     *
+     *
+     *
+     *
+     *
+     */
     string plus = "+";
     string minus = "-";
     string multi = "*";
@@ -53,7 +70,7 @@ void initTree(BinaryTree<string> &tree)
     
     
     
-    tree.setRootNode(*nodePlus);
+    tree.setRootNode(nodePlus);
     
     nodePlus->setLeftChild(*nodeMulti);
     nodePlus->setRightChild(*nodeThree);
@@ -73,6 +90,8 @@ int main(int argc, const char * argv[]) {
     BinaryTree<string> tree;
     initTree(tree);
     tree.recursionSearch();
+    tree.stackSearch();
+    tree.levelOrderSearch();
     return 0;
 }
 
